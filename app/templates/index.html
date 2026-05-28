@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal AI Ops Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Personal AI Operations Assistant</h1>
+    <p class="subtitle">Securely connect your fragmented data and get actionable insight.</p>
+
+    <section class="card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Username <input name="username" required /></label>
+        <label>Password <input type="password" name="password" required /></label>
+        <button type="submit">Login</button>
+      </form>
+      <p id="authMsg"></p>
+    </section>
+
+    <section class="card">
+      <h2>Add Record</h2>
+      <form id="ingestForm">
+        <label>Source <input name="source" placeholder="email / finance / chat" required /></label>
+        <label>Title <input name="title" required /></label>
+        <label>Tags (comma separated) <input name="tags" placeholder="insurance,car,renewal" /></label>
+        <label>Event Date (optional) <input type="date" name="event_date" /></label>
+        <label>Content <textarea name="content" rows="5" required></textarea></label>
+        <button type="submit">Store Securely</button>
+      </form>
+      <p id="ingestMsg"></p>
+    </section>
+
+    <section class="card">
+      <h2>Ask Your Assistant</h2>
+      <form id="queryForm">
+        <input id="question" placeholder="When does my insurance renew?" required />
+        <button type="submit">Search</button>
+      </form>
+      <pre id="queryResults"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Operations Dashboard</h2>
+      <button id="refreshBtn">Refresh</button>
+      <pre id="dashboard"></pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
