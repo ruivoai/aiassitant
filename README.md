@@ -18,12 +18,34 @@ This app stores sensitive data. Before using real data, you must configure:
 - Query endpoint to find relevant documents/records
 - Alert engine for due dates, renewals, missing documents, and likely subscriptions
 - Web dashboard for triage and natural-language querying
+## What this solves
+
+This project is built to address information overload by combining:
+
+- **Unified ingestion** from multiple sources via connector adapters
+- **Secure storage** with encrypted content-at-rest (application-layer encryption)
+- **AI-powered retrieval** (semantic-style search + context cards)
+- **Action detection engine** for due dates, pending submissions, renewals, and recurring charges
+- **Operations dashboard** highlighting urgent and upcoming tasks
+
+## MVP features in this repo
+
+- Connector model (`email`, `chat`, `document`, `finance`, `calendar`, `manual`)
+- Secure item ingestion API
+- AI-like query endpoint to find relevant documents/records
+- Alert engine for:
+  - due dates
+  - renewals
+  - missing documents
+  - likely subscriptions
+- Web dashboard for quick triage and natural-language querying
 
 ## Tech stack
 
 - **Backend:** FastAPI + SQLite
 - **Frontend:** Vanilla HTML/CSS/JS dashboard
 - **Security:** Fernet encryption + JWT auth
+- **Security:** Fernet encryption key from environment variable
 
 ## Run locally
 
@@ -54,3 +76,15 @@ Then open:
 - Never commit `APP_SECRET_KEY`, `APP_JWT_SECRET`, or admin credentials.
 - Use unique per-environment secrets and rotate them regularly.
 - For production, use KMS/HSM, RBAC, audit logs, token revocation, and hardened OAuth providers.
+## Security notes
+
+- This MVP encrypts payload content before database storage.
+- In production, use a managed KMS/HSM, strict RBAC, audit logging, and zero-trust connector tokens.
+- Never store plaintext secrets in source code.
+
+## Suggested next steps
+
+- OAuth integrations: Google, Microsoft, Slack, WhatsApp Business, bank CSV importers
+- Better AI pipeline: embeddings + vector DB + tool calling
+- User auth + tenant isolation
+- Notification channels (push/email/SMS)
