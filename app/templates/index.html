@@ -12,6 +12,16 @@
     <p class="subtitle">Securely connect your fragmented data and get actionable insight.</p>
 
     <section class="card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Username <input name="username" required /></label>
+        <label>Password <input type="password" name="password" required /></label>
+        <button type="submit">Login</button>
+      </form>
+      <p id="authMsg"></p>
+    </section>
+
+    <section class="card">
       <h2>Add Record</h2>
       <form id="ingestForm">
         <label>Source <input name="source" placeholder="email / finance / chat" required /></label>
