@@ -1,0 +1,37 @@
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+label { display: block; margin: 8px 0; }
+input, textarea, button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0b1220;
+  color: #e2e8f0;
+}
+button { background: #2563eb; cursor: pointer; }
+pre {
+  background: #0b1220;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+.subtitle { color: #94a3b8; }
